@@ -1,0 +1,5 @@
+export const FETCH_USER = 'USER/FETCH_USER';
+export const SHOW_LOADER = 'APP/SHOW_LOADER';
+export const HIDE_LOADER = 'APP/HIDE_LOADER';
+export const SHOW_ERROR = 'APP/SHOW_ERROR';
+export const ADD_FAVORITE_USER = 'USER/ADD_FAVORITE_USER';
