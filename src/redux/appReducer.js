@@ -1,4 +1,4 @@
-import { HIDE_LOADER, SHOW_LOADER, SHOW_ERROR } from './types';
+import { HIDE_LOADER, SHOW_LOADER } from './types';
 
 const initialState = {
   loading: false,
@@ -11,8 +11,6 @@ export const appReducer = (state = initialState, action) => {
       return { ...state, loading: true };
     case HIDE_LOADER:
       return { ...state, loading: false };
-    case SHOW_ERROR:
-      return { ...state, error: initialState };
     default:
       return state;
   }

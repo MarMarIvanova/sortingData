@@ -1,9 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { NotFound } from './NotFound';
 import { UserRow } from './UserRow';
+import { Context } from '../context';
 import $ from 'jquery';
 
-export const UserTable = ({ needRender, searchStringUsers, usersTable }) => {
+export const UserTable = () => {
+  const { users, searchStringUsers } = useContext(Context);
+
+  //колбэк с UserRow
+  // const isFound = (val) => {
+  //   if (val) {
+
+  //   }
+  // };
+
   return (
     <table className="table" id="tableUsers">
       <thead></thead>
@@ -11,14 +21,27 @@ export const UserTable = ({ needRender, searchStringUsers, usersTable }) => {
         {searchStringUsers.length < 1 ? (
           <NotFound />
         ) : (
-          usersTable.map((user, i) => (
-            <UserRow
-              renderRow={needRender}
-              searchStringUsersRow={searchStringUsers}
-              usersItem={user}
-              key={i}
-            />
-          ))
+          users.map(
+            (user, i) => {
+              return (
+                <UserRow
+                  //isFound={isFound}
+                  // renderRow={needRender}
+                  // searchStringUsersRow={searchStringUsers}
+                  usersItem={user}
+                  key={i}
+                />
+              );
+            }
+
+            // <UserRow
+            //   isFound={isFound}
+            //   // renderRow={needRender}
+            //   // searchStringUsersRow={searchStringUsers}
+            //   usersItem={user}
+            //   key={i}
+            // />
+          )
         )}
       </tbody>
     </table>

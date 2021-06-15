@@ -1,20 +1,4 @@
-import { FETCH_USER, HIDE_LOADER, SHOW_LOADER, SHOW_ERROR } from './types';
-import { ADD_FAVORITE_USER } from './types';
-
-// export function searchUser(newSearchString) {
-//   console.log(newSearchString.title);
-//   return {
-//     type: SEARCH_USER,
-//     payload: newSearchString.title,
-//   };
-// }
-
-export function addFavoriteUser(user) {
-  return {
-    type: ADD_FAVORITE_USER,
-    payload: user,
-  };
-}
+import { FETCH_USER, HIDE_LOADER, SHOW_LOADER } from './types';
 
 export function showLoader() {
   return { type: SHOW_LOADER };
@@ -22,10 +6,6 @@ export function showLoader() {
 
 export function hideLoader() {
   return { type: HIDE_LOADER };
-}
-
-export function showError() {
-  return { type: SHOW_ERROR };
 }
 
 export function fetchUsers() {
@@ -38,11 +18,6 @@ export function fetchUsers() {
     const json = await response.json();
     // if (json.results) {
     const responseFilter = await json.results;
-    //const responseFilter = await json.results.filter((item) => {
-    //  item.name.first.includes($('#searchInputValue').text()) ||
-    // item.name.last.includes($('#searchInputValue').text())
-    // });
-
     dispatch({ type: FETCH_USER, payload: responseFilter });
     dispatch(hideLoader());
     //  } else dispatch(showError());
