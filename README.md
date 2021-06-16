@@ -1,11 +1,12 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 ### Do it
 
 `npm i`
 `npm start`
+
+### Comments
+
+Начала реализацию с использованием redux, затем переписала на context. Файлы редакса оставила в репо, но отключила.
+Для перемещения пользователей хотела воспользоваться react-sortable-hoc, чтобы наделить material-ui Table компонент поддержкой drag-n-drop, но в задании есть огранчения на используемыен библитоеки и я засомневалась. 
 
 ### About
 
@@ -26,6 +27,3 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 - Будет плюсом добавить возможность рассортировывать пользователей в группе «Избранные» с помощью Drag&Drop.
 
-### Comments
-
-Начала реализацию с использованием react, react-redux, затем переписала на context. Файлы редакса оставила в репо.
