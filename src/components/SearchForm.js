@@ -56,7 +56,7 @@ const SearchForm = () => {
   const getUsers = () => {
     setLoading(true);
     $.ajax({
-      url: 'https://randomuser.me/api/?results=50&inc=name,email,registered,picture',
+      url: 'https://randomuser.me/api/?results=5000&inc=name,email,registered,picture',
       dataType: 'json',
       success: (response) => {
         setUsers(response.results);
